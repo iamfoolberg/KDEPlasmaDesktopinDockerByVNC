@@ -1,4 +1,6 @@
 # forked from https://github.com/nuntius-dev/KDEPlasmaDesktopinDocker
+![图片](https://github.com/user-attachments/assets/030bec4a-eab6-4106-adfd-98166a163281)
+
 
 # build
 ```
