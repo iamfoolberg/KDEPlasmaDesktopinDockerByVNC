@@ -1,11 +1,11 @@
 # forked from https://github.com/nuntius-dev/KDEPlasmaDesktopinDocker
 
 # build
-
+```
 docker build -t kde-plasma-docker .
-
+```
 # test
-
+```
 mkdir -p /docker/data/kde/desktop
 mkdir -p /docker/data/kde/vnc
 
@@ -20,3 +20,4 @@ docker run -d  \
   --name kde-plasma-container kde-plasma-docker
 
 #-v /home/berg/KDEPlasmaDesktopinDocker/start.sh:/root/start.sh \
+```
