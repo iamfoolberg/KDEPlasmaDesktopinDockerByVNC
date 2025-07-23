@@ -70,6 +70,22 @@ RUN mkdir -p /root/.vnc && \
     chmod 600 /root/.vnc/passwd && \
     chmod +x /root/start.sh
 
+#[option] install firefox chromium
+RUN apt update \
+    && apt install software-properties-common -y \
+    && add-apt-repository ppa:xtradeb/apps -y \
+    && add-apt-repository ppa:mozillateam/ppa -y \
+    && apt update \
+    && apt install chromium -y \
+    && echo ' \
+    Package: * \
+    Pin: release o=LP-PPA-mozillateam \
+    Pin-Priority: 1001 \
+    ' | sudo tee /etc/apt/preferences.d/mozilla-firefox \
+    && apt install firefox -y \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # crear el script de inicio
 #RUN echo '#!/bin/bash\n\
 #set -e\n\
